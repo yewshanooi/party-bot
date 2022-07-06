@@ -1,7 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const fetch = require("node-fetch");
+const fetch = require('node-fetch');
 const prefix = '!';
+const dotenv = require('dotenv');
+	dotenv.config();
 
 const helpembed = new Discord.MessageEmbed()
     .setColor('#ffc83d')
@@ -134,4 +136,4 @@ client.on('message', async message => {
 
 });
 
-client.login('');
+client.login(process.env.TOKEN);
