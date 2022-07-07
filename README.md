@@ -1,13 +1,12 @@
 <h1 align="center">
-    Party-Bot
+    Watch Together
     <br/>
 </h1>
 
-<h4 align="center">Discord party bot built with discord.js</h4>
+<h4 align="center">YouTube-integrated bot built with discord.js</h4>
 
 ## Features
-**Party-Bot** also comes packed with other features, such as:
-- **Watch Together** *(with YouTube Activity)*
+- **Watch Together Activity** *(through Discord-YouTube partnership)*
 
 ## Dependencies
 ###### Packages
@@ -24,8 +23,8 @@
 ###### Configuration Files
 1. **Clone** this repository to your drive
 ```sh
-git clone https://github.com/yewshanooi/party-bot.git
-cd party-bot
+git clone https://github.com/yewshanooi/watch-together.git
+cd watch-together
 ```
 2. Install the required **npm packages**
 ```

@@ -1,7 +1,7 @@
 {
-  "name": "party-bot",
-  "version": "0.1.0",
-  "description": "Discord party bot built with discord.js",
+  "name": "watch-together",
+  "version": "1.0.0",
+  "description": "YouTube-integrated bot built with discord.js",
   "dependencies": {
     "discord.js": "^12.2.0",
     "dotenv": "^16.0.1"

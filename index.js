@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const fetch = require('node-fetch');
 const { prefix, embedColor } = require('./config.json');
+const fetch = require('node-fetch');
 const dotenv = require('dotenv');
 	dotenv.config();
 
@@ -26,14 +26,14 @@ client.on('message', async message => {
     var cmd = (args != "" && message.content.charAt(0) === prefix) ? args.shift() : false;
 
     if (cmd === `youtube`) {
-        if (!message.channel.permissionsFor(message.guild.me).has("CREATE_INSTANT_INVITE")) return message.channel.send("❌ | Missing permission: `Create Invite`");
-        if (!message.member.voice.channel) return message.channel.send("To use this command, you must join a voice channel.")
+        if (!message.channel.permissionsFor(message.guild.me).has('CREATE_INSTANT_INVITE')) return message.channel.send('❌ | Missing permission: **Create Instant Invite**');
+        if (!message.member.voice.channel) return message.channel.send('Error: To use this command, you must be in a voice channel.')
         fetch(`https://discord.com/api/v8/channels/${message.member.voice.channelID}/invites`, {
             method: "POST",
             body: JSON.stringify({
                 max_age: 86400,
                 max_uses: 0,
-                target_application_id: "880218394199220334",
+                target_application_id: '880218394199220334',
                 target_type: 2,
                 temporary: false,
                 validate: null
@@ -44,15 +44,15 @@ client.on('message', async message => {
             }
         }).then(response => response.json()).then(data => {
             message.channel.send(`
-			✅ **Party created!**\nUse the Referral link to join the party and invite your friends.\n\nReferral Link: https://discord.gg/${data.code}
+			✅ **Party created!**\nUse this link to join the party and invite your friends.\n\nhttps://discord.gg/${data.code}
 			`);
         }).catch(() => {
-            message.channel.send("❌ | Could not start **YouTube Together**!");
+            message.channel.send('❌ | Could not start **YouTube Together**!');
         })
     }
 
     if (cmd === `help`) {
-        if (!message.channel.permissionsFor(message.guild.me).has("EMBED_LINKS")) return message.channel.send("❌ | Missing permission: `EMBED_LINKS`");
+        if (!message.channel.permissionsFor(message.guild.me).has('EMBED_LINKS')) return message.channel.send('❌ | Missing permission: **Embed Links**');
         message.channel.send(helpembed)
     }
 
