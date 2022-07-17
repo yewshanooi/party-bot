@@ -63,4 +63,4 @@ https://discord.com/api/oauth2/authorize?client_id={CLIENT_ID}&permissions=14972
 ```
 
 ## Contributors
-###### yewshanooi (Java)
+###### yewshanooi
