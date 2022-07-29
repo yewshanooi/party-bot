@@ -59,7 +59,7 @@ nodemon
 
 5. Replace this **OAuth2 URL** template with your **Client ID** and paste it in your browser to invite the application to your server
 ```
-https://discord.com/api/oauth2/authorize?client_id={CLIENT_ID}&permissions=1497295481975&scope=bot%20applications.commands
+https://discord.com/api/oauth2/authorize?client_id={CLIENT_ID}&permissions=93185&scope=bot%20applications.commands
 ```
 
 ## Contributors
