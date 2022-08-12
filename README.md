@@ -63,6 +63,4 @@ https://discord.com/api/oauth2/authorize?client_id={CLIENT_ID}&permissions=93185
 ```
 
 ## Contributors
-<ul>
-  <li><a href="https://github.com/yewshanooi">yewshanooi</a></li>
-</ul>
+- [yewshanooi](https://github.com/yewshanooi)
