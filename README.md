@@ -4,9 +4,11 @@
 </h1>
 
 <h4 align="center">YouTube-integrated bot built with discord.js</h4>
+<br/>
 
 ## Features
 - **Watch Together Activity** *(through Discord-YouTube partnership)*
+<br/>
 
 ## Dependencies
 ###### Packages
@@ -18,6 +20,7 @@
     </tr>
   </tbody>
 </table>
+<br/>
 
 ## Guide
 ###### Configuration Files
@@ -61,6 +64,7 @@ nodemon
 ```
 https://discord.com/api/oauth2/authorize?client_id={CLIENT_ID}&permissions=93185&scope=bot%20applications.commands
 ```
+<br/>
 
 ## Contributors
 - [yewshanooi](https://github.com/yewshanooi)
