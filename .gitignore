@@ -1,11 +1,3 @@
-# Dependency directories
 node_modules/
-
-# Environment variables
 .env
-
-# Configuration information
-config.json
-
-# Package manifest
 package-lock.json

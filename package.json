@@ -1,9 +1,21 @@
 {
   "name": "watch-together",
-  "version": "1.0.0",
-  "description": "YouTube-integrated bot built with discord.js",
+  "version": "2.0.0",
+  "description": "YouTube-integrated bot built with discord.js to watch videos directly on Voice Channels",
+  "main": "index.js",
+  "author": "Ooi Yew Shan",
+  "repository": "github:yewshanooi/watch-together",
+  "homepage": "https://github.com/yewshanooi/watch-together",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.9.0"
+  },
   "dependencies": {
-    "discord.js": "^12.2.0",
-    "dotenv": "^16.0.1"
+    "chalk": "^4.1.2",
+    "discord-api-types": "^0.37.11",
+    "discord.js": "^14.5.0",
+    "dotenv": "^16.0.3",
+    "node-fetch": "^2.6.7",
+    "nodemon": "^2.0.20"
   }
 }

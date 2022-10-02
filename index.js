@@ -1,61 +1,27 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
-const { prefix, embedColor } = require('./config.json');
-const fetch = require('node-fetch');
+const newLocal = require('fs');
+const fs = newLocal;
 const dotenv = require('dotenv');
 	dotenv.config();
+const chalk = require('chalk');
+global.errors = require('./errors.js');
 
-client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}`);
-    client.user.setActivity(`${prefix}help`, {
-        type: "WATCHING"
-    });
-});
+const { Client, Collection, GatewayIntentBits, Partials } = require('discord.js');
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildBans, GatewayIntentBits.GuildIntegrations, GatewayIntentBits.GuildWebhooks, GatewayIntentBits.GuildInvites, GatewayIntentBits.GuildVoiceStates, GatewayIntentBits.GuildPresences, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMessageReactions, GatewayIntentBits.GuildMessageTyping, GatewayIntentBits.DirectMessages, GatewayIntentBits.DirectMessageReactions, GatewayIntentBits.DirectMessageTyping], partials: [Partials.Channel] });
+client.commands = new Collection();
 
-const helpembed = new Discord.MessageEmbed()
-    .setTitle('Commands')
-    .addField(`${prefix}**youtube**`, '*Watch some Cat videos in Discord*')
-    .setColor(embedColor)
+const commandsFolder = fs.readdirSync('./commands');
 
-client.on('message', async message => {
-    if (message.author.bot) return;
-    if (message.content.indexOf(prefix) !== 0) return;
+for (const categories of commandsFolder) {
+	for (const cmdFile of fs.readdirSync(`commands/${categories}`).filter(file => file.endsWith('.js'))) {
+		const command = require(`./commands/${categories}/${cmdFile}`);
+		client.commands.set(command.data.name, command);
+	}
+}
 
-    var args = message.content.match(/[^_\W]+/g);
-    args = (args == null) ? "" : args.join(' ').toLowerCase().trim().split(/ +/g);
-    var cmd = (args != "" && message.content.charAt(0) === prefix) ? args.shift() : false;
+if (!process.env.TOKEN) throw new Error(`${chalk.redBright.bold('[Error]')} The enviromental variable ${chalk.bold('TOKEN')} is not set`);
+if (!process.env.CLIENT_ID) throw new Error(`${chalk.redBright.bold('[Error]')} The enviromental variable ${chalk.bold('CLIENT_ID')} is not set`);
 
-    if (cmd === `youtube`) {
-        if (!message.channel.permissionsFor(message.guild.me).has('CREATE_INSTANT_INVITE')) return message.channel.send('❌ | Missing permission: **Create Instant Invite**');
-        if (!message.member.voice.channel) return message.channel.send('Error: To use this command, you must be in a voice channel.')
-        fetch(`https://discord.com/api/v8/channels/${message.member.voice.channelID}/invites`, {
-            method: "POST",
-            body: JSON.stringify({
-                max_age: 86400,
-                max_uses: 0,
-                target_application_id: '880218394199220334',
-                target_type: 2,
-                temporary: false,
-                validate: null
-            }),
-            headers: {
-                "Authorization": `Bot ${client.token}`,
-                "Content-Type": "application/json"
-            }
-        }).then(response => response.json()).then(data => {
-            message.channel.send(`
-			✅ **Party created!**\nUse this link to join the party and invite your friends.\n\nhttps://discord.gg/${data.code}
-			`);
-        }).catch(() => {
-            message.channel.send('❌ | Could not start **YouTube Together**!');
-        })
-    }
 
-    if (cmd === `help`) {
-        if (!message.channel.permissionsFor(message.guild.me).has('EMBED_LINKS')) return message.channel.send('❌ | Missing permission: **Embed Links**');
-        message.channel.send(helpembed)
-    }
-
-});
+require('./event')(client);
 
 client.login(process.env.TOKEN);
