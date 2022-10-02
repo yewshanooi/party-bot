@@ -65,7 +65,7 @@ cd watch-together
 ```
 npm install
 ```
-3. Create a new **.env** file and fill it with your own secret key
+3. Create a new **.env** file and fill it with your own secret keys
 ```
 TOKEN=
 CLIENT_ID=
@@ -85,7 +85,7 @@ nodemon
 ###### Bot & Application
 1. Visit [Discord Developer Portal](https://discord.com/developers/applications) to create a new application
 
-2. Add a **bot user** to your application
+2. Add a **Bot user** to your application
 
 3. Enable `PUBLIC BOT` authorization flow option for the application **(OPTIONAL)**
 
