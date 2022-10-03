@@ -1,6 +1,6 @@
 <p align="center">
     <h1 align="center">Watch Together</h1>
-    <h4 align="center">YouTube-integrated bot built with discord.js to watch videos directly on Voice Channels</h4>
+    <h4 align="center">YouTube-integrated bot built with discord.js to watch videos directly on voice channels</h4>
 </p>
 
 <p align="center">
@@ -20,17 +20,6 @@
 
 ## Features
 - **Watch Together** *(with YouTube Activity)*
-<br/>
-
-## Commands
-<table>
-  <tr>
-    <td><b>Fun</b></td>
-  </tr>
-  <tr>
-    <td>youtube</td>
-  </tr>
-</table>
 <br/>
 
 ## Dependencies
@@ -70,7 +59,7 @@ npm install
 TOKEN=
 CLIENT_ID=
 ```
-4. Run the **deploy.js** file to deploy application commands<br/>
+4. Run the **deploy.js** file to deploy application commands
 ```
 node deploy.js
 ```
@@ -93,24 +82,13 @@ nodemon
 
 5. Replace this **OAuth2 URL** template with your **Client ID** and paste it in your browser to invite the application to your server
 ```url
-https://discord.com/api/oauth2/authorize?client_id={CLIENT_ID}&permissions=93185&scope=bot%20applications.commands
+https://discord.com/api/oauth2/authorize?client_id={CLIENT_ID}&permissions=274878000129&scope=bot%20applications.commands
 ```
 
 ###### OAuth2 URL Scopes & Permissions
-<table>
-  <tr>
-    <td>Create Invite</td>
-    <td>Manage Messages</td>
-  </tr>
-  <tr>
-    <td>Read Messages</td>
-    <td>Embed Links</td>
-  </tr>
-  <tr>
-    <td>Send Messages</td>
-    <td>Read Message History</td>
-  </tr>
-</table>
+<p align="left">
+    <img src=".github/generate_oauth2_url.png"/>
+</p>
 <br/>
 
 ## License
