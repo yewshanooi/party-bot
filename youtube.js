@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('youtube')
-        .setDescription('Start a YouTube activity on your voice channel'),
+        .setDescription('Start a YouTube activity in your voice channel'),
     guildOnly: true,
     execute (interaction) {
         if (!interaction.guild.members.me.permissions.has('CreateInstantInvite')) return interaction.reply({ content: 'Error: Bot permission denied. Enable **Create Instant Invite** permission in `Server Settings > Roles` to use this command.' });
