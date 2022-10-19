@@ -1,7 +1,7 @@
 {
   "name": "watch-together",
-  "version": "2.1.0",
-  "description": "YouTube-integrated bot built with discord.js to watch videos directly on voice channels",
+  "version": "2.2.0",
+  "description": "Open source discord bot with YouTube activity to watch videos in voice channels",
   "main": "index.js",
   "author": "Ooi Yew Shan",
   "repository": "github:yewshanooi/watch-together",
