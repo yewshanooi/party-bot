@@ -1,6 +1,6 @@
 <p align="center">
     <h1 align="center">Watch Together</h1>
-    <h4 align="center">YouTube-integrated bot built with discord.js to watch videos directly on voice channels</h4>
+    <h4 align="center">Open source discord bot with YouTube activity to watch videos in voice channels</h4>
 </p>
 
 <p align="center">
