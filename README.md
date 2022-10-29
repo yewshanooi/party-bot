@@ -15,6 +15,10 @@
     <a href="https://github.com/yewshanooi/watch-together/blob/main/LICENSE">
         <img alt="License" src="https://img.shields.io/github/license/yewshanooi/watch-together?style=flat-square">
     </a>
+  &nbsp;
+    <a href="https://github.com/yewshanooi/watch-together/commits/">
+        <img alt="Last Commit" src="https://img.shields.io/github/last-commit/yewshanooi/watch-together?style=flat-square">
+    </a>
 </p>
 <br/>
 
